@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Records from './Users.json';
+import {User} from './Component/user';
+import {Product} from './Component/product'
+import {Filter1} from './Component/filter'
+import {Filter2} from './Component/filter'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       {
+        Records.map( records =>{
+          return(
+            <div key="id">
+          
+            <li>{records.username}</li>
+            
+            </div>
+          )
+        })
+       }
+       <div> <User /> </div>
+      <div> <Product /> </div>
+      <div><Filter1 /></div>
+      <div><Filter2 /></div>
     </div>
   );
 }
